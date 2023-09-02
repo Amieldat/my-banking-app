@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import "../assets/css/AddAccount.css"
 
 export const AddAccount = ({ users, setUsers, modalToggle }) => {
     const [formData, setFormData] = useState({
@@ -12,7 +13,8 @@ export const AddAccount = ({ users, setUsers, modalToggle }) => {
         email: "",
         password: "",
         confirmPassword: "",
-        balance: 0
+        balance: 0,
+        expenses: []
     })
 
     const radios = {
