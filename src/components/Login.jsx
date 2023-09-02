@@ -20,37 +20,61 @@ export const Login = () => {
           firstName: "admin",
           middleName: "admin",
           lastName: "admin",
+          role: "admin",
           gender: "male", 
           accountNumber: "7777777",
           username: "admin",
           email: "admin@bank.com",
           password: "admin",
           confirmPassword: "admin",
-          balance: 0
+          balance: 0, 
+          expenses: []
         },
         {
           firstName: "Amiel",
           middleName: "Pogi",
           lastName: "Dats",
+          role: "user",
           gender: "male", 
           accountNumber: "1",
           username: "amieldat",
           email: "amiel@bank.com",
           password: "aa",
           confirmPassword: "aa",
-          balance: 1000
+          balance: 1000,
+          expenses: [
+            {
+              description: "Transportation", 
+              amount: 500
+            },
+            {
+              description: "Groceries", 
+              amount: 2000
+            }
+          ]
         },
         {
           firstName: "Epi",
           middleName: "Pogi",
           lastName: "Adonis",
+          role: "user",
           gender: "male", 
           accountNumber: "2",
           username: "Eps",
           email: "eps@bank.com",
           password: "bb",
           confirmPassword: "bb",
-          balance: 1000
+          balance: 1000,
+          expenses: [
+            {
+              description: "Transportation", 
+              amount: 1000
+            },
+            {
+              description: "Groceries", 
+              amount: 2000
+            }
+          ]
         }
       ])
       setUsersLoaded(true)
