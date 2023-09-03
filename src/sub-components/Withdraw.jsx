@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import "../assets/css/Universal.css"
 
 export const Withdraw = ({ users, setUsers }) => {
     const [formData, setFormData] = useState({
@@ -48,8 +49,8 @@ export const Withdraw = ({ users, setUsers }) => {
       }
 
     return (
-        <>
-            Withdraw
+        <div id="withdraw">
+            <h2>Withdraw</h2>
             <br />
             <form onSubmit={handleSubmit} onChange={handleChange}>
                 <label htmlFor="">Enter Account Number</label>
@@ -61,6 +62,6 @@ export const Withdraw = ({ users, setUsers }) => {
                 <br />
                 <input type="submit" />
             </form>
-        </>
+        </div>
     )
 }

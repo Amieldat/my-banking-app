@@ -12,7 +12,8 @@ export const AddAccount = ({ users, setUsers, modalToggle }) => {
         email: "",
         password: "",
         confirmPassword: "",
-        balance: 0
+        balance: 0,
+        expenses: []
     })
 
     const radios = {
@@ -78,8 +79,9 @@ export const AddAccount = ({ users, setUsers, modalToggle }) => {
     }
 
     return (
-        <div id="addAccount" style={{ display: `${modalToggle ? "block" : "none"}` }}>
-            Add Account
+        <div id="addAccount" className={`modal-container ${modalToggle ? "show" : ""}`}>
+            <div className="modal">
+            <h2>Add Account</h2>
             <br />
             <form onSubmit={handleSubmit} onChange={handleChange}>
                 <label htmlFor="firstName">First Name</label>
@@ -138,7 +140,7 @@ export const AddAccount = ({ users, setUsers, modalToggle }) => {
 
                 <input type="submit" />
             </form>
-
+            </div>        
         </div>
     )
 }

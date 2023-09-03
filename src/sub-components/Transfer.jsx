@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import "../assets/css/Universal.css"
 
 export const Transfer = ({ users, setUsers }) => {
     const [formData, setFormData] = useState({
@@ -58,8 +59,8 @@ export const Transfer = ({ users, setUsers }) => {
       }
 
     return (
-        <>
-            Transfer
+        <div id="transfer" className="transfer-container">
+            <h2>Transfer</h2>
             <br />
             <form onSubmit={handleSubmit} onChange={handleChange}>
                 <label htmlFor="">Enter Sender Account Number</label>
@@ -75,6 +76,6 @@ export const Transfer = ({ users, setUsers }) => {
                 <br />
                 <input type="submit" />
             </form>
-        </>
+        </div>
     )
 }

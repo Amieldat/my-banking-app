@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import "../assets/css/Universal.css"
 
 export const Deposit = ({ users, setUsers }) => {
     const [formData, setFormData] = useState({
@@ -48,8 +49,8 @@ export const Deposit = ({ users, setUsers }) => {
       }
 
     return (
-        <>
-            Deposit
+        <div id="deposit">
+            <h2>Deposit</h2>
             <br />
             <form onSubmit={handleSubmit} onChange={handleChange}>
                 <label htmlFor="">Enter Account Number</label>
@@ -61,6 +62,6 @@ export const Deposit = ({ users, setUsers }) => {
                 <br />
                 <input type="submit" />
             </form>
-        </>
+        </div>
     )
 }
