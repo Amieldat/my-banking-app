@@ -1,0 +1,9 @@
+/* for Budget.css */
+.delete-button {
+  background-color: rgb(61, 59, 59);
+  color: #ffffff; 
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
