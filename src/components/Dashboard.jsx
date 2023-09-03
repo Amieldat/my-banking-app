@@ -18,7 +18,7 @@ export const Dashboard = () => {
     const isAdmin = users.find(({ username }) => loggedIn == username)?.role == "admin"
 
     return (
-        <div id="dashboard">
+        <div id="dashboard" className="dashboard-container">
             <button onClick={() => setLoggedIn("")}>Log Out</button>
             <h2>Dashboard</h2>
             {isAdmin 
@@ -33,7 +33,7 @@ export const Dashboard = () => {
                 : (
                     <>
                         User
-                        <button onClick={() => setExpenseModalToggle(!expenseModalToggle)}>Add Expense</button>
+                        <button onClick={() => setExpenseModalToggle(!expenseModalToggle)} className="addExpense-button">Add Expense</button>
                         <Budget users={users} loggedIn={loggedIn} />
                         <AddExpense users={users} setUsers={setUsers} loggedIn={loggedIn} modalToggle={expenseModalToggle} />
                     </>
