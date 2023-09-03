@@ -112,3 +112,21 @@
   .modal {
     max-width: 400px;
   }
+
+  .dashboard-container {
+    border: 1px solid #ccc;
+    padding: 50px; 
+    background-color: rgb(191, 191, 221);
+    width: 350px;
+    float: right;
+    margin-right: 20px;
+  }
+  
+  .addExpense-button {
+    background-color: #666262;
+    color: #ffffff; 
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
