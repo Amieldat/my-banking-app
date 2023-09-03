@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import "../assets/css/Universal.css"
 
 export const Deposit = ({ users, setUsers }) => {
     const [formData, setFormData] = useState({

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import "../assets/css/Universal.css"
 
 export const Withdraw = ({ users, setUsers }) => {
     const [formData, setFormData] = useState({
