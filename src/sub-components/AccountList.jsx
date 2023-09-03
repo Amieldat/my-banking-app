@@ -1,7 +1,7 @@
 export const AccountList = ({ users }) => {
     return (
-        <>
-            Bank Accounts
+        <div id="accountList">
+            <h2>Bank Accounts</h2>
 
             <div>
                 {users.map(({ role, firstName, lastName, username, accountNumber }) => (
@@ -13,7 +13,7 @@ export const AccountList = ({ users }) => {
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 
