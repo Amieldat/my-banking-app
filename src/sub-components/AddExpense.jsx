@@ -51,8 +51,9 @@ export const AddExpense = ({ users, setUsers, loggedIn, modalToggle }) => {
     }
 
     return (
-        <div id="addExpense" style={{ display: `${modalToggle ? "block" : "none"}` }}>
-            Add Expense
+        <div id="addExpense" className={`modal-container ${modalToggle ? "show" : ""}`}>
+            <div className="modal">
+            <h2>Add Expense</h2>
             <br />
             <form onSubmit={handleSubmit} onChange={handleChange}>
                 <label htmlFor="description">Description</label>
@@ -63,7 +64,8 @@ export const AddExpense = ({ users, setUsers, loggedIn, modalToggle }) => {
                 <br />
 
                 <input type="submit" />
-            </form>
+            </form>  
+            </div>
         </div>
     )
 }
