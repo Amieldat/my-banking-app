@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLocalStorage } from '../hooks'
 import { Link } from 'react-router-dom'
+import "../assets/css/Global.css"
 
 export const Login = () => {
   const [formData, setFormData] = useState({
@@ -119,8 +120,8 @@ export const Login = () => {
   }, [loggedIn])
 
   return (
-    <>
-      <h2>Log in</h2>
+    <div id="login">
+      <h1>Title Here</h1>
       <form onSubmit={handleSubmit} onChange={handleChange}>
         <label htmlFor="userame">Username</label>
         <input id="userame" type="text" name="username" />
@@ -131,6 +132,6 @@ export const Login = () => {
         <input type="submit" />
       </form>
       <Link to="/signup">Sign up</Link>
-    </>
+    </div>
   )
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLocalStorage } from '../hooks'
+import "../assets/css/Global.css"
 
 export const Signup = () => {
   const [formData, setFormData] = useState({
@@ -72,7 +73,7 @@ export const Signup = () => {
   }, [formSubmitted])
 
   return (
-    <>
+    <div id="signUp">
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit} onChange={handleChange}>
         <label htmlFor="firstName">First Name</label>
@@ -118,6 +119,6 @@ export const Signup = () => {
 
         <input type="submit" />
       </form>
-    </>
+    </div>
   )
 }

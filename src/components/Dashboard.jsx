@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLocalStorage } from '../hooks'
 import { AccountList, AddAccount, AddExpense, Budget, Deposit, Transfer, Withdraw } from '../sub-components'
+import "../assets/css/Global.css"
 
 export const Dashboard = () => {
     const [loggedIn, setLoggedIn] = useLocalStorage("loggedIn")
@@ -17,16 +18,16 @@ export const Dashboard = () => {
     const isAdmin = users.find(({ username }) => loggedIn == username)?.role == "admin"
 
     return (
-        <>
+        <div id="dashboard">
             <button onClick={() => setLoggedIn("")}>Log Out</button>
-            Dashboard
+            <h2>Dashboard</h2>
             {isAdmin 
                 ? (
                     <>
                         Admin
                         <button onClick={() => setAccountModalToggle(!accountModalToggle)}>Add Account</button>
                         <AccountList users={users} />
-                        <AddAccount users={users} />
+                        <AddAccount users={users} setUsers={setUsers} modalToggle={accountModalToggle}/>
                     </>
                 )
                 : (
@@ -40,6 +41,6 @@ export const Dashboard = () => {
             <Deposit users={users} setUsers={setUsers} />
             <Withdraw users={users} setUsers={setUsers} />
             <Transfer users={users} setUsers={setUsers} />
-        </>
+        </div>
     )
 }
