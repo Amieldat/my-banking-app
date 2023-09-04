@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const AddAccount = ({ users, setUsers, modalToggle }) => {
+export const AddAccount = ({ users, setUsers, modalToggle, setModalToggle }) => {
     const [formData, setFormData] = useState({
         firstName: "",
         middleName: "",
@@ -81,6 +81,7 @@ export const AddAccount = ({ users, setUsers, modalToggle }) => {
     return (
         <div id="addAccount" className={`modal-container ${modalToggle ? "show" : ""}`}>
             <div className="modal">
+            <button onClick={setModalToggle}>x</button>
             <h2>Add Account</h2>
             <br />
             <form onSubmit={handleSubmit} onChange={handleChange}>

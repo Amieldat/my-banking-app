@@ -9,6 +9,15 @@ export const Dashboard = () => {
     const navigate = useNavigate()
     const [accountModalToggle, setAccountModalToggle] = useState(false)
     const [expenseModalToggle, setExpenseModalToggle] = useState(false)
+    const handleAccountModalToggle = () => {
+        document.body.classList.toggle("modal-open")
+        console.log(accountModalToggle)
+        setAccountModalToggle(!accountModalToggle)
+    }
+    const handleExpenseModalToggle = () => {
+        setExpenseModalToggle(!expenseModalToggle)
+        document.body.classList.toggle("modal-open")
+    }
     
     useEffect(() => {
         if (loggedIn == "") navigate("/")
@@ -21,26 +30,27 @@ export const Dashboard = () => {
         <div id="dashboard" className="dashboard-container">
             <button onClick={() => setLoggedIn("")}>Log Out</button>
             <h2>Dashboard</h2>
+            <h3>{loggedIn}</h3>
             {isAdmin 
                 ? (
                     <>
-                        Admin
-                        <button onClick={() => setAccountModalToggle(!accountModalToggle)}>Add Account</button>
+                        <button onClick={handleAccountModalToggle}>Add Account</button>
                         <AccountList users={users} />
-                        <AddAccount users={users} setUsers={setUsers} modalToggle={accountModalToggle}/>
+                        <AddAccount users={users} setUsers={setUsers} modalToggle={accountModalToggle} setModalToggle={handleAccountModalToggle}/>
                     </>
                 )
                 : (
                     <>
-                        User
-                        <button onClick={() => setExpenseModalToggle(!expenseModalToggle)} className="addExpense-button">Add Expense</button>
-                        <Budget users={users} loggedIn={loggedIn} />
-                        <AddExpense users={users} setUsers={setUsers} loggedIn={loggedIn} modalToggle={expenseModalToggle} />
+                        <button onClick={handleExpenseModalToggle} className="addExpense-button">Add Expense</button>
+                        <Budget users={users} setUsers={setUsers} loggedIn={loggedIn} />
+                        <AddExpense users={users} setUsers={setUsers} loggedIn={loggedIn} modalToggle={expenseModalToggle} setModalToggle={handleExpenseModalToggle} />
                     </>
                 )}
-            <Deposit users={users} setUsers={setUsers} />
-            <Withdraw users={users} setUsers={setUsers} />
-            <Transfer users={users} setUsers={setUsers} />
+            <div id="bank-container">
+                <Deposit users={users} setUsers={setUsers} />
+                <Withdraw users={users} setUsers={setUsers} />
+                <Transfer users={users} setUsers={setUsers} />
+            </div>
         </div>
     )
 }
