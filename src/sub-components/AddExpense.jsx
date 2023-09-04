@@ -1,8 +1,7 @@
 import { useState } from 'react'
 
-export const AddExpense = ({ users, setUsers, loggedIn, modalToggle }) => {
+export const AddExpense = ({ users, setUsers, loggedIn, modalToggle, setModalToggle }) => {
     const currentUser = users.find(({ username }) => username == loggedIn)
-    const currentUserExpenses = currentUser?.expenses
 
     const [formData, setFormData] = useState({
         description: "",
@@ -25,6 +24,8 @@ export const AddExpense = ({ users, setUsers, loggedIn, modalToggle }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+    const currentUserExpenses = currentUser?.expenses
+
     
         const { 
             description: formDescription, 
@@ -53,6 +54,7 @@ export const AddExpense = ({ users, setUsers, loggedIn, modalToggle }) => {
     return (
         <div id="addExpense" className={`modal-container ${modalToggle ? "show" : ""}`}>
             <div className="modal">
+            <button onClick={setModalToggle}>x</button>
             <h2>Add Expense</h2>
             <br />
             <form onSubmit={handleSubmit} onChange={handleChange}>
