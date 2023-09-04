@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import "../assets/css/Universal.css"
 
 export const Budget = ({ users, loggedIn }) => {
@@ -22,7 +22,7 @@ export const Budget = ({ users, loggedIn }) => {
         <div key={i}>
           <span>{description}</span>
           <span>{amount}</span>
-          <button className="delete-button" onClick={() => handleDeleteExpense(i)}> &#128465; {/* Unicode emoji for a trash can */}
+          <button className="delete-button" onClick={() => handleDeleteExpense(i)}> &#128465;
           </button>
         </div>
       ))}
