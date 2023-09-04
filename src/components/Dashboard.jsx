@@ -28,7 +28,10 @@ export const Dashboard = () => {
 
     return (
         <div id="dashboard" className="dashboard-container">
-            <button onClick={() => setLoggedIn("")}>Log Out</button>
+            <div className="logout-button-container">
+                <button onClick={() => setLoggedIn("")} className="logout-button">Log Out</button>
+            </div>
+            <h1>TMH Savings Bank</h1>
             <h2>Dashboard</h2>
             <h3>{loggedIn}</h3>
             {isAdmin 
