@@ -1,4 +1,4 @@
-/* Budget.css */
+/* Budget */
 #budget {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
@@ -33,7 +33,7 @@ h2 {
 }
 
 .amount {
-  flex: 1; /* Take up less space */
+  flex: 1;
   font-style: italic;
   color: #007bff;
   font-size: 18px;
@@ -69,4 +69,59 @@ h2 {
 
 .reset-button:hover {
   background-color: #0056b3;
+}
+
+/* AccountList */
+
+.account-list {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.account-list-heading {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.account-table {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.table-header {
+  display: flex;
+  background-color: #f0f0f0;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.table-header-cell {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+}
+
+.table-row {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  transition: background-color 0.2s;
+}
+
+.table-row:hover {
+  background-color: #f5f5f5;
+}
+
+.table-cell {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
 }
