@@ -45,7 +45,6 @@ export const Budget = ({ users, setUsers, loggedIn }) => {
         <div>
           <span>Description</span>
           <span>Amount</span>
-        </div>
         {expenses.map(({ description, amount }, i) => (
           <div key={i}>
             <span>{description}</span>
@@ -58,6 +57,7 @@ export const Budget = ({ users, setUsers, loggedIn }) => {
       <button className="reset-button" onClick={handleResetExpenses}>
         Reset Expenses
       </button>
+      </div>
     </div>
   )
 }
